@@ -1,20 +1,42 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" height="475" alt="Portfolio Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# 🌐 Personal Portfolio Web App
 
-This contains everything you need to run your app locally.
+This project is a modern, interactive personal portfolio website designed to showcase my work, skills, and projects. It highlights my experience in development, design, and business platforms.
 
-View your app in AI Studio: https://ai.studio/apps/45c29211-e79a-417a-9f4c-6a2715e4b94b
+---
 
-## Run Locally
+## 🚀 Features
 
-**Prerequisites:**  Node.js
+- 🎯 Clean and modern UI
+- 🌙 Dark mode support
+- ⚡ Fast and responsive design
+- 📂 Project showcase section
+- 📧 Contact integration
+- 🔐 Secure environment variable handling
+- 💡 Scalable and easy to customize
 
+---
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript / React
+- **Backend (if applicable):** Node.js
+- **Styling:** CSS / Tailwind (if used)
+- **Environment:** Node.js
+
+---
+
+## 📦 Installation & Setup
+
+### Prerequisites
+
+- Node.js installed on your system
+
+### Steps to Run Locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
