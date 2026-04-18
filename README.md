@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="1200" height="475" alt="Portfolio Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" height="475" alt="Portfolio Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" referrerPolicy="no-referrer" />
 </div>
 
 # 🌐 Personal Portfolio Web App
@@ -10,21 +10,23 @@ This project is a modern, interactive personal portfolio website designed to sho
 
 ## 🚀 Features
 
-- 🎯 Clean and modern UI
-- 🌙 Dark mode support
+- 🎯 Clean and modern UI with a "Digital Architect" aesthetic
 - ⚡ Fast and responsive design
-- 📂 Project showcase section
-- 📧 Contact integration
-- 🔐 Secure environment variable handling
+- 📂 Project showcase section (Featuring FinAura Capital)
+- 📧 Contact integration with direct WhatsApp/Email links
+- 🌊 Smooth scroll animations using Framer Motion
+- 🔮 Interactive 3D background elements
 - 💡 Scalable and easy to customize
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript / React
-- **Backend (if applicable):** Node.js
-- **Styling:** CSS / Tailwind (if used)
+- **Framework:** React 18+ (Vite)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion (motion/react)
+- **Icons:** Lucide React
+- **3D Graphics:** Three.js / React Three Fiber
 - **Environment:** Node.js
 
 ---
@@ -39,4 +41,28 @@ This project is a modern, interactive personal portfolio website designed to sho
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/shubhamdalvi2002/portfolio.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📧 Contact
+
+- **Email:** shubhamdalvi7218@gmail.com
+- **WhatsApp:** +91 72189 18236
+- **LinkedIn:** [Shubham Dalvi](https://www.linkedin.com/in/shubham-dalvi-8bb31624b/)
