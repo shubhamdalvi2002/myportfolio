@@ -42,10 +42,10 @@ export default function Contact() {
                   </div>
                   <ArrowUpRight size={20} className="text-white/20 group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                 </a>
-                <a href="https://wa.me/9172187218" target="_blank" rel="noreferrer" className="group flex items-center justify-between py-6 border-b border-white/10 hover:border-accent transition-colors">
+                <a href="https://wa.me/917218918236" target="_blank" rel="noreferrer" className="group flex items-center justify-between py-6 border-b border-white/10 hover:border-accent transition-colors">
                   <div className="flex flex-col">
                     <span className="font-sans text-[10px] uppercase tracking-widest text-white/30">WhatsApp</span>
-                    <span className="font-display text-xl md:text-2xl">+91 7218 7218</span>
+                    <span className="font-display text-xl md:text-2xl">+91 72189 18236</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="font-sans text-[10px] uppercase tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity">Chat Now</span>
