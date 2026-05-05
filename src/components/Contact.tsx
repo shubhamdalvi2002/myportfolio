@@ -18,7 +18,7 @@ export default function Contact() {
       `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${message}`
     );
     
-    window.location.href = `mailto:finnauracapital@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:shubhamdalvi7218@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
