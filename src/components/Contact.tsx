@@ -1,7 +1,31 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent(`Portfolio Enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${message}`
+    );
+    
+    window.location.href = `mailto:finnauracapital@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section id="contact" className="py-32 px-8 md:px-16">
       <div className="max-w-7xl mx-auto">
@@ -77,20 +101,44 @@ export default function Contact() {
             viewport={{ once: true }}
             className="glass-card p-12"
           >
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-8" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label className="font-sans text-[10px] uppercase tracking-widest text-white/30">Your Name</label>
-                <input type="text" className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg" placeholder="John Doe" />
+                <input 
+                  type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg" 
+                  placeholder="John Doe" 
+                />
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-[10px] uppercase tracking-widest text-white/30">Email Address</label>
-                <input type="email" className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg" placeholder="john@example.com" />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg" 
+                  placeholder="john@example.com" 
+                />
               </div>
               <div className="space-y-2">
                 <label className="font-sans text-[10px] uppercase tracking-widest text-white/30">Project Details</label>
-                <textarea rows={4} className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg resize-none" placeholder="Tell me about your vision..." />
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4} 
+                  className="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-accent transition-colors font-sans text-lg resize-none" 
+                  placeholder="Tell me about your vision..." 
+                />
               </div>
-              <button className="w-full py-6 bg-white text-black font-sans text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent hover:text-white transition-all duration-500">
+              <button type="submit" className="w-full py-6 bg-white text-black font-sans text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent hover:text-white transition-all duration-500">
                 Send Inquiry
               </button>
             </form>
