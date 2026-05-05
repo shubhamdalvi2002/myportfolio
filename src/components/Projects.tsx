@@ -28,7 +28,7 @@ export default function Projects() {
               <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-accent">Portfolio</span>
             </div>
             <h2 className="text-4xl md:text-7xl font-display leading-[1.1] tracking-tighter">
-              Selected <span className="text-editorial">Works</span>
+              Selected Works
             </h2>
           </div>
           <p className="font-sans text-white/40 max-w-sm mb-2">

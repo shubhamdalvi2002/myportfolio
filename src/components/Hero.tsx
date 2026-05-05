@@ -25,15 +25,7 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
             className="block"
           >
-            Shubham <span className="text-editorial">Dalvi</span>
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="block text-white/20"
-          >
-            Digital Architect<span className="text-accent">.</span>
+            Shubham Dalvi
           </motion.span>
         </h1>
 

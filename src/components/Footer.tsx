@@ -33,7 +33,7 @@ export default function Footer() {
               SD<span className="text-accent">.</span>
             </div>
             <p className="font-sans text-white/40 max-w-sm leading-relaxed text-sm">
-              Digital Architect bridging the gap between sophisticated technical systems and strategic financial logic. 
+              Bridging the gap between sophisticated technical systems and strategic financial logic. 
               Designing the future of digital interactions.
             </p>
           </div>

@@ -18,7 +18,7 @@ export default function Contact() {
                 <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-accent">Contact</span>
               </div>
               <h2 className="text-6xl md:text-8xl font-display leading-[1] tracking-tighter mb-12">
-                Let's start <br /> <span className="text-editorial">something</span> great.
+                Let's start <br /> something great.
               </h2>
               <p className="font-sans text-xl text-white/40 leading-relaxed max-w-md">
                 I'm currently available for new projects and collaborations. If you have an idea, let's bring it to life.

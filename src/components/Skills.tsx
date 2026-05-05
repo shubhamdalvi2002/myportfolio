@@ -34,7 +34,7 @@ export default function Skills() {
             <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-accent">Expertise</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-display leading-[1.1] tracking-tighter">
-            Technical <span className="text-editorial">Proficiency</span>
+            Technical Proficiency
           </h2>
         </motion.div>
 

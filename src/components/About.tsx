@@ -15,7 +15,7 @@ export default function About() {
             <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-accent">Biography</span>
           </div>
           <h2 className="text-5xl md:text-7xl font-display leading-[1.1] tracking-tighter max-w-4xl">
-            A fusion of <span className="text-editorial">academic precision</span> and creative engineering.
+            A fusion of academic precision and creative engineering.
           </h2>
         </motion.div>
 
