@@ -18,7 +18,14 @@ export default function Contact() {
       `Name: ${name}\nEmail: ${email}\n\nProject Details:\n${message}`
     );
     
-    window.location.href = `mailto:shubhamdalvi7218@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:shubhamdalvi7218@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Create a temporary link and click it - more reliable on mobile
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -99,9 +106,9 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="glass-card p-12"
+            className="glass-card p-12 relative z-10 pointer-events-auto"
           >
-            <form className="space-y-8" onSubmit={handleSubmit}>
+            <form className="relative z-10 space-y-8" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label className="font-sans text-[10px] uppercase tracking-widest text-white/30">Your Name</label>
                 <input 
@@ -138,7 +145,10 @@ export default function Contact() {
                   placeholder="Tell me about your vision..." 
                 />
               </div>
-              <button type="submit" className="w-full py-6 bg-white text-black font-sans text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent hover:text-white transition-all duration-500">
+              <button 
+                type="submit" 
+                className="relative z-20 w-full py-6 bg-white text-black font-sans text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-accent hover:text-white active:scale-[0.98] transition-all duration-500 cursor-pointer"
+              >
                 Send Inquiry
               </button>
             </form>
