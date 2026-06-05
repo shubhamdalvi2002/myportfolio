@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function About() {
   return (
@@ -29,7 +30,7 @@ export default function About() {
           >
             <div className="space-y-8 max-w-2xl">
               <p className="font-sans text-lg md:text-xl text-white/60 leading-relaxed">
-                I am a final-year <span className="text-white font-medium">MSc Computer Science student</span> with a strong interest in web development and building practical software solutions. Alongside my technical journey, I run a mutual fund consultancy platform, <span className="text-accent">FinAura Capital</span>, where I help clients understand investment options and make informed financial decisions.
+                I am a final-year <span className="text-white font-medium">MSc Computer Science student</span> with a strong interest in web development and building practical software solutions. Alongside my technical journey, I run a mutual fund consultancy platform, <a href="https://finncap-in.vercel.app/" target="_blank" rel="noreferrer" className="text-accent hover:text-white underline decoration-accent/30 hover:decoration-white transition-all duration-300 font-medium inline-flex items-center gap-0.5">FinAura Capital <ArrowUpRight size={14} className="shrink-0" /></a>, where I help clients understand investment options and make informed financial decisions.
               </p>
               <p className="font-sans text-lg md:text-xl text-white/60 leading-relaxed">
                 This combination of technology and finance allows me to build solutions that are both technically strong and aligned with real-world financial needs. I am continuously improving my skills in both domains.
@@ -53,23 +54,18 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-4 glass-card p-3 overflow-hidden relative group min-h-[400px] md:min-h-full flex flex-col justify-between"
+            className="md:col-span-4 glass-card p-3 overflow-hidden relative group min-h-[450px] md:min-h-full flex flex-col justify-end"
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent z-10 pointer-events-none" />
             <img
               src="https://lh3.googleusercontent.com/d/165KN0eFOsXd86rEWxmXaQhj-FEFmLlQd"
               alt="Shubham Dalvi"
               referrerPolicy="no-referrer"
-              className="absolute inset-0 w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+              className="absolute inset-0 w-full h-full object-cover object-top opacity-95 group-hover:scale-105 transition-all duration-700 ease-out"
             />
-            <div className="relative z-20 h-full flex flex-col justify-between p-6">
-              <span className="font-sans text-[10px] uppercase tracking-widest text-white/60 bg-black/40 backdrop-blur-md self-start px-3 py-1 rounded">
-                Profile Portrait
-              </span>
-              <div className="text-left mt-auto pt-24">
-                <div className="font-display text-2xl text-white">Shubham Dalvi</div>
-                <div className="font-sans text-xs text-accent mt-1">Founder, FinAura Capital</div>
-              </div>
+            <div className="relative z-20 p-6 text-left">
+              <div className="font-display text-2.5xl text-white font-medium tracking-tight">Shubham Dalvi</div>
+              <div className="font-sans text-xs text-accent mt-1.5 uppercase tracking-wider">Founder, FinAura Capital</div>
             </div>
           </motion.div>
 
