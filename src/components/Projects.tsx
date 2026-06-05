@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -85,9 +85,6 @@ export default function Projects() {
                 <div className="flex flex-wrap items-center gap-6 md:gap-8 pt-4">
                   <a href={project.link} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-sans text-[11px] uppercase tracking-widest hover:text-accent transition-colors">
                     View Project <ArrowUpRight size={16} />
-                  </a>
-                  <a href="https://github.com/shubhamdalvi2002" target="_blank" rel="noreferrer" className="flex items-center gap-2 font-sans text-[11px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">
-                    Source Code <Github size={16} />
                   </a>
                 </div>
               </div>

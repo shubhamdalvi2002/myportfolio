@@ -47,17 +47,43 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Location/Status */}
+          {/* Image Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="md:col-span-4 glass-card p-12 bg-accent text-white"
+            className="md:col-span-4 glass-card p-3 overflow-hidden relative group min-h-[400px] md:min-h-full flex flex-col justify-between"
+          >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+            <img
+              src="https://lh3.googleusercontent.com/d/165KN0eFOsXd86rEWxmXaQhj-FEFmLlQd"
+              alt="Shubham Dalvi"
+              referrerPolicy="no-referrer"
+              className="absolute inset-0 w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+            />
+            <div className="relative z-20 h-full flex flex-col justify-between p-6">
+              <span className="font-sans text-[10px] uppercase tracking-widest text-white/60 bg-black/40 backdrop-blur-md self-start px-3 py-1 rounded">
+                Profile Portrait
+              </span>
+              <div className="text-left mt-auto pt-24">
+                <div className="font-display text-2xl text-white">Shubham Dalvi</div>
+                <div className="font-sans text-xs text-accent mt-1">Founder, FinAura Capital</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Location/Status */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="md:col-span-6 glass-card p-12 bg-accent text-white"
           >
             <div className="h-full flex flex-col justify-between">
               <div className="font-sans text-[11px] uppercase tracking-widest opacity-60">Current Status</div>
-              <div>
+              <div className="mt-8">
                 <div className="text-3xl font-display mb-4">Available for innovative projects.</div>
                 <div className="font-sans text-sm opacity-80">Based in Pune, India. Working globally.</div>
               </div>
@@ -69,13 +95,13 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="md:col-span-4 glass-card p-12"
+            transition={{ delay: 0.3 }}
+            className="md:col-span-6 glass-card p-12"
           >
             <div className="font-sans text-[11px] uppercase tracking-widest text-white/30 mb-8">Interests</div>
             <div className="flex flex-wrap gap-3">
               {["FinTech", "AI/ML", "Cloud Architecture", "UI Design", "Stock Market"].map((item) => (
-                <span key={item} className="px-4 py-2 rounded-full border border-white/10 font-sans text-xs text-white/60">
+                <span key={item} className="px-4 py-2 rounded-full border border-white/10 font-sans text-xs text-white/60 hover:border-accent hover:text-white transition-colors duration-300">
                   {item}
                 </span>
               ))}
