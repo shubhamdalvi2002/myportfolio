@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Experience() {
   const experiences = [
@@ -7,6 +8,14 @@ export default function Experience() {
       company: "FinAura Capital",
       period: "2023 — Present",
       description: "Providing guidance on mutual fund investments, helping clients make informed financial decisions, and managing a digital financial consultancy platform.",
+      certificateUrl: "",
+    },
+    {
+      title: "Data Analytics Intern",
+      company: "CodTech IT Solutions Pvt. Ltd.",
+      period: "May 9, 2026 — June 20, 2026 (6 Weeks)",
+      description: "Conducted exploratory data analysis, data cleaning, and dataset visualization to uncover patterns and actionable insights. (Intern ID: CITS53)",
+      certificateUrl: "https://drive.google.com/file/d/1hlfNWQ6xsbqC9k2_7nz6-tqvbpQHnnS2/view?usp=drive_link"
     },
   ];
 
@@ -65,9 +74,19 @@ export default function Experience() {
                     <span className="font-sans text-[11px] uppercase tracking-widest text-white/20">{exp.period}</span>
                   </div>
                   <div className="font-sans text-sm text-white/40 mb-4">{exp.company}</div>
-                  <p className="font-sans text-white/60 leading-relaxed max-w-md">
+                  <p className="font-sans text-white/60 leading-relaxed max-w-md mb-4">
                     {exp.description}
                   </p>
+                  {exp.certificateUrl && (
+                    <a
+                      href={exp.certificateUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-xs uppercase tracking-wider text-accent hover:text-white transition-colors duration-300 pointer-events-auto cursor-pointer border-b border-accent/20 hover:border-white/45 pb-0.5"
+                    >
+                      View Certificate <ArrowUpRight size={12} className="relative -top-0.5" />
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -125,30 +144,59 @@ export default function Experience() {
             <h2 className="text-4xl font-display tracking-tighter ml-4">Certifications</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {[
               { title: "Full Stack Development", issuer: "Meta", date: "2024" },
+              { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2023", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
+              { title: "C, C++ & DSA", issuer: "Technorbit Infosystem", date: "2023", url: "https://drive.google.com/drive/folders/1-DvHp9mx92ro-kA-Z7szBuY_C1o0QE5Q?usp=drive_link" },
               { title: "Financial Markets", issuer: "Yale University", date: "2023" },
               { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
-            ].map((cert, idx) => (
-              <motion.div
-                key={cert.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="glass-card p-8 group hover:border-accent/30 transition-colors"
-              >
-                <div className="text-white/20 mb-4 group-hover:text-accent transition-colors">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15l-2 5 2 2 2-2-2-5z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="7" r="4"/></svg>
-                </div>
-                <h4 className="font-display text-xl mb-2">{cert.title}</h4>
-                <div className="flex justify-between items-center">
-                  <span className="font-sans text-xs text-white/40">{cert.issuer}</span>
-                  <span className="font-sans text-[10px] uppercase tracking-widest text-white/20">{cert.date}</span>
-                </div>
-              </motion.div>
-            ))}
+            ].map((cert, idx) => {
+              const CardContent = (
+                <>
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="text-white/20 group-hover:text-accent transition-colors">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15l-2 5 2 2 2-2-2-5z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    {cert.url && (
+                      <ArrowUpRight size={16} className="text-white/20 group-hover:text-accent transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
+                    )}
+                  </div>
+                  <h4 className="font-display text-xl mb-2">{cert.title}</h4>
+                  <div className="flex justify-between items-center">
+                    <span className="font-sans text-xs text-white/40">{cert.issuer}</span>
+                    <span className="font-sans text-[10px] uppercase tracking-widest text-white/20">{cert.date}</span>
+                  </div>
+                </>
+              );
+
+              return cert.url ? (
+                <motion.a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={cert.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card p-8 group hover:border-accent/30 transition-all duration-300 block cursor-pointer hover:scale-[1.02]"
+                >
+                  {CardContent}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={cert.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card p-8 group hover:border-accent/30 transition-colors"
+                >
+                  {CardContent}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>
