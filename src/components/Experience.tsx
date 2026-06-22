@@ -6,9 +6,9 @@ export default function Experience() {
     {
       title: "Mutual Fund Distributor",
       company: "FinAura Capital",
-      period: "2023 — Present",
+      period: "Feb 10, 2026 — Present",
       description: "Providing guidance on mutual fund investments, helping clients make informed financial decisions, and managing a digital financial consultancy platform.",
-      certificateUrl: "",
+      certificateUrl: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link",
     },
     {
       title: "Data Analytics Intern",
@@ -147,7 +147,7 @@ export default function Experience() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {[
               { title: "Full Stack Development", issuer: "Meta", date: "2024" },
-              { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2023", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
+              { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2026", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
               { title: "C, C++ & DSA", issuer: "Technorbit Infosystem", date: "2023", url: "https://drive.google.com/drive/folders/1-DvHp9mx92ro-kA-Z7szBuY_C1o0QE5Q?usp=drive_link" },
               { title: "Financial Markets", issuer: "Yale University", date: "2023" },
               { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
