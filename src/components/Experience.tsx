@@ -144,13 +144,15 @@ export default function Experience() {
             <h2 className="text-4xl font-display tracking-tighter ml-4">Certifications</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {[
-              { title: "Full Stack Development", issuer: "Meta", date: "2024" },
+              { title: "Building LLM Apps & Agents (LangChain)", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
+              { title: "Building Professional Demeanor", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
               { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2026", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
+              { title: "Full Stack Development", issuer: "Meta", date: "2024" },
+              { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
               { title: "C, C++ & DSA", issuer: "Technorbit Infosystem", date: "2023", url: "https://drive.google.com/drive/folders/1-DvHp9mx92ro-kA-Z7szBuY_C1o0QE5Q?usp=drive_link" },
               { title: "Financial Markets", issuer: "Yale University", date: "2023" },
-              { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
             ].map((cert, idx) => {
               const CardContent = (
                 <>
