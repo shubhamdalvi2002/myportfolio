@@ -138,67 +138,126 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mt-32 pt-32 border-t border-white/5"
         >
-          <div className="flex items-center gap-4 mb-12">
+          <div className="flex items-center gap-4 mb-16">
             <span className="w-12 h-[1px] bg-accent" />
             <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-accent">Recognition</span>
             <h2 className="text-4xl font-display tracking-tighter ml-4">Certifications</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {[
-              { title: "Building LLM Apps & Agents (LangChain)", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
-              { title: "Building Professional Demeanor", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
-              { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2026", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
-              { title: "Full Stack Development", issuer: "Meta", date: "2024" },
-              { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
-              { title: "C, C++ & DSA", issuer: "Technorbit Infosystem", date: "2023", url: "https://drive.google.com/drive/folders/1-DvHp9mx92ro-kA-Z7szBuY_C1o0QE5Q?usp=drive_link" },
-              { title: "Financial Markets", issuer: "Yale University", date: "2023" },
-            ].map((cert, idx) => {
-              const CardContent = (
-                <>
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="text-white/20 group-hover:text-accent transition-colors">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15l-2 5 2 2 2-2-2-5z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="7" r="4"/></svg>
+          {/* Business & Financial Credentials */}
+          <div className="mb-20">
+            <h3 className="font-sans text-xs uppercase tracking-[0.3em] text-accent mb-8 pl-4 border-l border-accent/40">Business & Financial Credentials</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {[
+                { title: "NJ Wealth Partner", issuer: "NJ Wealth", date: "2026", url: "https://drive.google.com/file/d/1fi06Zx_LdSYEOmeaOl--j0zKu7jXyUIE/view?usp=drive_link" },
+                { title: "NISM Series V-A: Mutual Fund Distributors", issuer: "NISM", date: "2026", url: "https://drive.google.com/file/d/16VAKCq27GVd9-KcBID1b8h7cPZJPV8r3/view?usp=drive_link" },
+                { title: "Financial Markets", issuer: "Yale University", date: "2023" },
+              ].map((cert, idx) => {
+                const CardContent = (
+                  <>
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="text-white/20 group-hover:text-accent transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15l-2 5 2 2 2-2-2-5z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="7" r="4"/></svg>
+                      </div>
+                      {cert.url && (
+                        <ArrowUpRight size={16} className="text-white/20 group-hover:text-accent transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
+                      )}
                     </div>
-                    {cert.url && (
-                      <ArrowUpRight size={16} className="text-white/20 group-hover:text-accent transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
-                    )}
-                  </div>
-                  <h4 className="font-display text-xl mb-2">{cert.title}</h4>
-                  <div className="flex justify-between items-center">
-                    <span className="font-sans text-xs text-white/40">{cert.issuer}</span>
-                    <span className="font-sans text-[10px] uppercase tracking-widest text-white/20">{cert.date}</span>
-                  </div>
-                </>
-              );
+                    <h4 className="font-display text-xl mb-2">{cert.title}</h4>
+                    <div className="flex justify-between items-center">
+                      <span className="font-sans text-xs text-white/40">{cert.issuer}</span>
+                      <span className="font-sans text-[10px] uppercase tracking-widest text-white/20">{cert.date}</span>
+                    </div>
+                  </>
+                );
 
-              return cert.url ? (
-                <motion.a
-                  href={cert.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={cert.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-8 group hover:border-accent/30 transition-all duration-300 block cursor-pointer hover:scale-[1.02]"
-                >
-                  {CardContent}
-                </motion.a>
-              ) : (
-                <motion.div
-                  key={cert.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="glass-card p-8 group hover:border-accent/30 transition-colors"
-                >
-                  {CardContent}
-                </motion.div>
-              );
-            })}
+                return cert.url ? (
+                  <motion.a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="glass-card p-8 group hover:border-accent/30 transition-all duration-300 block cursor-pointer hover:scale-[1.02]"
+                  >
+                    {CardContent}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="glass-card p-8 group hover:border-accent/30 transition-colors"
+                  >
+                    {CardContent}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Academic & Technical Certifications */}
+          <div>
+            <h3 className="font-sans text-xs uppercase tracking-[0.3em] text-accent mb-8 pl-4 border-l border-accent/40">Academic & Technical Certifications</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {[
+                { title: "Building LLM Apps & Agents (LangChain)", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
+                { title: "Building Professional Demeanor", issuer: "Nowrosjee Wadia College", date: "2026", url: "https://drive.google.com/file/d/1PCNbeYBhx37Hghim0y-v4XsXGPztNdQL/view?usp=drive_link" },
+                { title: "Full Stack Development", issuer: "Meta", date: "2024" },
+                { title: "Cloud Practitioner", issuer: "AWS", date: "2024" },
+                { title: "C, C++ & DSA", issuer: "Technorbit Infosystem", date: "2023", url: "https://drive.google.com/drive/folders/1-DvHp9mx92ro-kA-Z7szBuY_C1o0QE5Q?usp=drive_link" },
+              ].map((cert, idx) => {
+                const CardContent = (
+                  <>
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="text-white/20 group-hover:text-accent transition-colors">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 15l-2 5 2 2 2-2-2-5z"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="7" r="4"/></svg>
+                      </div>
+                      {cert.url && (
+                        <ArrowUpRight size={16} className="text-white/20 group-hover:text-accent transition-colors duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 animate-pulse" />
+                      )}
+                    </div>
+                    <h4 className="font-display text-xl mb-2">{cert.title}</h4>
+                    <div className="flex justify-between items-center">
+                      <span className="font-sans text-xs text-white/40">{cert.issuer}</span>
+                      <span className="font-sans text-[10px] uppercase tracking-widest text-white/20">{cert.date}</span>
+                    </div>
+                  </>
+                );
+
+                return cert.url ? (
+                  <motion.a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="glass-card p-8 group hover:border-accent/30 transition-all duration-300 block cursor-pointer hover:scale-[1.02]"
+                  >
+                    {CardContent}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    key={cert.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="glass-card p-8 group hover:border-accent/30 transition-colors"
+                  >
+                    {CardContent}
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>
