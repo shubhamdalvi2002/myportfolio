@@ -48,6 +48,14 @@ export default function Hero() {
             >
               Read Biography
             </a>
+            <a
+              href="https://drive.google.com/file/d/17hDO7wmTr5IQKWvnEmdTe7nP7DNp9fmk/view?usp=drive_link"
+              target="_blank"
+              rel="noreferrer"
+              className="font-sans text-[11px] uppercase tracking-[0.2em] text-accent hover:text-white transition-colors"
+            >
+              View Resume
+            </a>
           </motion.div>
 
           <motion.div

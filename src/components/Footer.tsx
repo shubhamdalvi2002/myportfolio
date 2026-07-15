@@ -12,6 +12,7 @@ export default function Footer() {
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
+    { name: "Resume", href: "https://drive.google.com/file/d/17hDO7wmTr5IQKWvnEmdTe7nP7DNp9fmk/view?usp=drive_link", external: true },
   ];
 
   const socialLinks = [
@@ -46,6 +47,8 @@ export default function Footer() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noreferrer" : undefined}
                     className="font-sans text-[11px] uppercase tracking-widest text-white/40 hover:text-accent transition-colors block w-fit"
                   >
                     {link.name}

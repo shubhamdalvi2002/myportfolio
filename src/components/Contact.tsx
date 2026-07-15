@@ -99,6 +99,9 @@ export default function Contact() {
                   <a href="https://finncap-in.vercel.app/" target="_blank" rel="noreferrer" className="group flex items-center gap-2 font-sans text-[11px] uppercase tracking-widest text-white/40 hover:text-white transition-colors">
                     FinAura Capital <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
+                  <a href="https://drive.google.com/file/d/17hDO7wmTr5IQKWvnEmdTe7nP7DNp9fmk/view?usp=drive_link" target="_blank" rel="noreferrer" className="group flex items-center gap-2 font-sans text-[11px] uppercase tracking-widest text-accent hover:text-white transition-colors">
+                    Resume <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                 </div>
               </div>
             </div>

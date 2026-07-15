@@ -7,6 +7,7 @@ export default function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Resume", href: "https://drive.google.com/file/d/17hDO7wmTr5IQKWvnEmdTe7nP7DNp9fmk/view?usp=drive_link", external: true },
   ];
 
   return (
@@ -27,6 +28,8 @@ export default function Navbar() {
           <a
             key={link.name}
             href={link.href}
+            target={link.external ? "_blank" : undefined}
+            rel={link.external ? "noreferrer" : undefined}
             className="font-sans text-[11px] uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
           >
             {link.name}
